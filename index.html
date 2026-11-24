@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estadística bayesiana</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="La inferencia como actualización de creencias: previas, posteriores, decisión, intervalos creíbles, factores de Bayes, computación de la posterior, el modelo lineal bayesiano, modelos jerárquicos, el filtro de Kalman y las redes bayesianas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="index">
+<header class="topbar"><a class="brand" href="index.html">Estadística <b>bayesiana</b></a><span class="eyebrow">Curso visual e interactivo · Matemática</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+
+<p class="aviso-curado" role="note">El material de Matemática está en proceso de curado: puede tener errores.</p>
+<header class="hero">
+  <span class="eyebrow">Curso visual e interactivo · Matemática</span>
+  <h1>Lo que sabías, más lo que viste, es lo que ahora sabes</h1>
+  <p class="lede">La estadística clásica trata el parámetro como un número fijo y desconocido; la bayesiana lo trata como algo sobre lo que se tiene incertidumbre, y la actualiza con los datos mediante el teorema de Bayes. El curso construye esa idea con rigor, de la previa conjugada al modelo jerárquico, y la lleva a problemas reales: regresión, comparación de modelos, sistemas dinámicos y redes causales.</p>
+</header>
+
+<section>
+  <h2>Cómo usar este curso</h2>
+  <div class="prose">
+    <p><b>Estado.</b> El curso está en preparación. La <a href="temario.html">tabla de contenido</a> ya tiene los 13 capítulos con sus secciones y sus laboratorios, y está en revisión.</p>
+    <p><b>Para quién es.</b> Para quien ya leyó Inferencia estadística (estimación, intervalos y contrastes clásicos), Simulación (Monte Carlo y los algoritmos MCMC) y Modelos lineales. Este curso usa los tres: no repite la máxima verosimilitud, ni la construcción de Metropolis-Hastings, ni la geometría de mínimos cuadrados.</p>
+    <p><b>Cómo está hecho.</b> Un mismo ejemplo recorre el curso: la tasa de falla de un componente que se prueba lote a lote, que empieza como una binomial con previa beta y termina como un modelo jerárquico entre fábricas. Los laboratorios dejan mover la previa y los datos y ver la posterior moverse en vivo; las prácticas usan Python (NumPy, SciPy, PyMC) o R (rstan, brms). Es un nodo final del grafo: no es requisito de otro curso, y recoge lo que Inferencia, Simulación y Modelos lineales dejaron listo.</p>
+  </div>
+</section>
+
+<details class="stage" id="temario" open><summary><h2><span class="pn">Empieza aquí</span> Tabla de contenido</h2></summary>
+  <div class="mods">
+    <a class="mod" href="temario.html"><span class="n">≡</span><b>Tabla de contenido</b><p>Cada capítulo con sus secciones y sus laboratorios.</p></a>
+  </div>
+</details>
+
+<details class="stage" id="parte-1" open><summary><h2><span class="pn">Parte 1</span> Pensar con probabilidades</h2><span class="cuenta" data-etapa-cuenta="1"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="de-la-verosimilitud-a-la-posterior"><span class="n">01</span><b>De la verosimilitud a la posterior: la estadística clásica y la bayesiana</b><p>Previa, verosimilitud, posterior y predictiva: las cuatro piezas de toda inferencia bayesiana.</p></div>
+    <div class="mod soon" data-id="familias-conjugadas"><span class="n">02</span><b>Familias conjugadas y la familia exponencial</b><p>Beta-binomial, gamma-Poisson y normal-normal: los casos en que la posterior se escribe con lápiz.</p></div>
+    <div class="mod soon" data-id="elegir-la-previa"><span class="n">03</span><b>Elegir la previa: informativas, no informativas y de referencia</b><p>De dónde sale la previa, qué pasa cuando no se sabe nada y cuánto pesa la elección.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-2" open><summary><h2><span class="pn">Parte 2</span> Inferir con la posterior</h2><span class="cuenta" data-etapa-cuenta="2"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="estimacion-y-decision"><span class="n">04</span><b>Estimación paramétrica bayesiana y teoría de la decisión</b><p>El estimador de Bayes depende de la pérdida: media, mediana y moda son respuestas a preguntas distintas.</p></div>
+    <div class="mod soon" data-id="intervalos-creibles"><span class="n">05</span><b>Intervalos creíbles y la asintótica de la posterior</b><p>Intervalos que se leen como se quisiera leer un intervalo de confianza, y cuándo coinciden con él.</p></div>
+    <div class="mod soon" data-id="seleccion-de-modelos"><span class="n">06</span><b>Contraste bayesiano y selección de modelos</b><p>El factor de Bayes, la verosimilitud marginal y los criterios predictivos para elegir entre modelos.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-3" open><summary><h2><span class="pn">Parte 3</span> Calcular la posterior</h2><span class="cuenta" data-etapa-cuenta="3"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="computacion-bayesiana"><span class="n">07</span><b>Computación bayesiana: Monte Carlo, muestreo de importancia y MCMC en la práctica</b><p>Integrar la posterior con muestras, y cómo saber si las muestras de una cadena sirven.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-4" open><summary><h2><span class="pn">Parte 4</span> Modelos bayesianos</h2><span class="cuenta" data-etapa-cuenta="4"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="modelo-lineal-bayesiano"><span class="n">08</span><b>El modelo lineal gaussiano: del planteamiento clásico al bayesiano</b><p>La regresión con previas conjugadas, una y varias variables explicativas, y la predicción.</p></div>
+    <div class="mod soon" data-id="otras-previas-y-residuos-no-esfericos"><span class="n">09</span><b>El modelo lineal con otras previas y con residuos no esféricos</b><p>Regularización como previa, previas de selección de variables y errores heterocedásticos o correlacionados.</p></div>
+    <div class="mod soon" data-id="regresion-no-lineal-y-glm"><span class="n">10</span><b>Regresión no lineal y modelos lineales generalizados bayesianos</b><p>Cuando la posterior no es conjugada: la verosimilitud no lineal y su muestreo.</p></div>
+    <div class="mod soon" data-id="modelos-jerarquicos"><span class="n">11</span><b>Modelos jerárquicos y Bayes empírico</b><p>Varios grupos que comparten información: entre no agrupar nada y agruparlo todo.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-5" open><summary><h2><span class="pn">Parte 5</span> Dinámica y grafos</h2><span class="cuenta" data-etapa-cuenta="5"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="filtro-de-kalman"><span class="n">12</span><b>Modelos de espacio de estados y el filtro de Kalman</b><p>Actualizar la creencia sobre un estado oculto cada vez que llega una observación, y estimar modelos dinámicos con eso.</p></div>
+    <div class="mod soon" data-id="redes-bayesianas"><span class="n">13</span><b>Redes bayesianas: modelo probabilístico y aprendizaje</b><p>Grafos dirigidos que factorizan una distribución conjunta, y cómo se aprenden sus parámetros y su estructura.</p></div>
+  </div>
+</details>
+
+
+
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/mate-estadistica-bayesiana" target="_blank" rel="noopener">github.com/aaramirez/mate-estadistica-bayesiana</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+</body>
+</html>
